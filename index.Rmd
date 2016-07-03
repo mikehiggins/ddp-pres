@@ -1,0 +1,55 @@
+---
+title       : Distribution of births by sex
+subtitle    : What is the distribution of male and female births by year in Hong Kong
+author      : Mike Higgins
+job         : 
+framework   : io2012       # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Hypothesis and Data source
+
+We want to explore the male/female mix of new births in Hong Kong by year, to understand if the ratio changes significantly through the years of 1961 - 2014.
+
+We make use of a public dataset available on the Hong Kong Government Data.One portal, at the following link: https://goo.gl/F9XJtN
+
+--- .class #id 
+
+## Data dimensions
+
+```{r}
+# load data from csv file
+births <- read.csv("data/births-by-year.csv")
+str(births)
+```
+
+---
+## Typical output
+This barplot shows results for a single year
+
+
+```{r echo=FALSE}
+#births <- read.csv("data/births-by-year.csv")
+births$Male.Births <- as.numeric(births$Male.Births)
+births$Female.Births <- as.numeric(births$Female.Births)
+
+# subset values based on input$year from ui.R
+x <- subset(births, births$Year == 1980)
+
+plotData <- c(x$Female.Births, x$Male.Births)
+options(scipen=5)
+
+# draw the barplot with values from the select year
+barplot(plotData,
+        names.arg = c("Female", "Male"),
+        ylim = c(0,100000),
+        xlab = "Gender",
+        ylab = "No. of births",
+        col = c("blue", "green"),
+        cex.axis = 1.2)
+
+```

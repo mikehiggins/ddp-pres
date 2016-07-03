@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Distribution of births by sex</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Distribution of births by sex">
+  <meta name="author" content="Mike Higgins">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Distribution of births by sex</h1>
+    <h2>What is the distribution of male and female births by year in Hong Kong</h2>
+    <p>Mike Higgins<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Hypothesis and Data source</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We want to explore the male/female mix of new births in Hong Kong by year, to understand if the ratio changes significantly through the years of 1961 - 2014.</p>
+
+<p>We make use of a public dataset available on the Hong Kong Government Data.One portal, at the following link: <a href="https://goo.gl/F9XJtN">https://goo.gl/F9XJtN</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data dimensions</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r"># load data from csv file
+births &lt;- read.csv(&quot;data/births-by-year.csv&quot;)
+str(births)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    54 obs. of  4 variables:
+##  $ Year         : int  1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 ...
+##  $ Birth.rate   : num  35 34 33.5 30.7 28.1 25.3 23.7 21.7 21.3 20 ...
+##  $ Male.Births  : int  57361 58161 59064 55388 52029 47489 45668 42608 42480 40734 ...
+##  $ Female.Births: int  53523 54342 55486 52237 49081 44343 42547 40077 40002 38398 ...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Typical output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This barplot shows results for a single year</p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Hypothesis and Data source'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data dimensions'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Typical output'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
